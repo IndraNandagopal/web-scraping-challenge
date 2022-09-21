@@ -18,11 +18,11 @@
     <div class="container">
     
         <div class="jumbotron text-center">
-          <h1 class="font-weight-bold">Mission to Mars Demo</h1>
+          <h1 class="font-weight-bold">Mission to Mars</h1>
           <p><a class="btn btn-primary btn-lg" href="../scrape" role="button">Scrape New Data</a></p>
         </div>
     
-        <div class="row">
+        <div class="row" id="mars-news">
           <div class="col-md-12">
             <h2><u>Latest Mars News</u></h2>
           </div>
@@ -35,15 +35,24 @@
           </div>
         </div>
       
-        <div class="row">
+        <div class="row" id="mars-featured-image">
           <div class="col-md-8">
             <h2 class=""><u>Featured Mars Image</u></h2> 
             </br>
             <img src="{{mars.featured_image_url | default ('static/images/error.png',true )}}" class = "img-responsive" alt="Features Mars Image">
           </div>
           <div class="col-md-4">
+            <div class="row" id="mars-facts">
+              
              <h2><u>Mars Facts</u></h2>
+             </br>
+             <style>
+              table, th, td {
+                border: 1px solid black;
+              }
+             </style>
                 {{ mars.fact_table | safe }}
+            </div>
           </div>
         </div>
      
